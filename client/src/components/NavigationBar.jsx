@@ -25,7 +25,7 @@ export default function NavigationBar({setauthUser,setsocket,socket,setisLogging
     }
     return(
         <div className='flex  bg-black h-15 w-full items-center justify-between px-10'>
-        <div className=' text-xl text-white font-bold'><Link to='/'>ChatGuy</Link></div>
+        <div className=' text-xl text-white font-bold'><Link to='/'>Chatly</Link></div>
         <div className=' flex gap-3'>
         <Link className='' to={'/profile'}>
         <UserRound className='text-white h-6 hover:text-sky-500 hover:border-sky-500 transition border-2 rounded-full border-white w-6 font-bold' size={18} />
