@@ -56,10 +56,10 @@ App.use('/api/message', require('./api/message.js'));
 App.get('/', (req, res) => {
   res.send("Server is working");
 });
-
+connectDB();
 // Start server
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
-  connectDB();
+  
 });
