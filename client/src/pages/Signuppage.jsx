@@ -78,27 +78,27 @@ const handleSubmit = async(e)=>{
          <form className="max-w-96 w-full text-center border border-gray-300/60 rounded-2xl px-8 bg-indigo-950"
          onSubmit={handleSubmit}
          >
-            <h1 className="text-white text-3xl mt-10 font-medium">Create account</h1>
-            
-            <div className="flex items-center mt-8 w-full border-2 border-sky-500 h-12 rounded-full overflow-hidden pl-6 gap-2">
+            <h1 className="text-sky-400  text-2xl md:text-3xl mt-10 font-medium">Create account</h1>
+            <p className="text-white text-xs mt-2">Enter your deails</p>
+            <div className="flex items-center mt-6 w-full border-2 border-sky-500 h-11 rounded-full overflow-hidden pl-6 gap-1">
                
-                <input onChange={(e)=>{setformData({...formData,fullname:e.target.value})}} type="text" placeholder="fullname" className="bg-indigo-950 text-white placeholder-gray-500 outline-none text-sm w-full h-full" required />                 
+                <input onChange={(e)=>{setformData({...formData,fullname:e.target.value})}} type="text" placeholder="fullname" className="bg-indigo-950 text-white placeholder-gray-500 outline-none text-xs w-full h-full" required />                 
             </div>
-            <div className="flex items-center w-full mt-8  border-2 border-sky-500 h-12 rounded-full overflow-hidden pl-6 gap-2">
+            <div className="flex items-center w-full mt-4  border-2 border-sky-500 h-11 rounded-full overflow-hidden pl-6 gap-1">
                
-                <input onChange={(e)=>{setformData({...formData,email:e.target.value})}} type="email" placeholder="Email id" className="bg-indigo-950 text-white placeholder-gray-500 outline-none text-sm w-full h-full" required />                 
+                <input onChange={(e)=>{setformData({...formData,email:e.target.value})}} type="email" placeholder="Email id" className="bg-indigo-950 text-white placeholder-gray-500 outline-none text-xs w-full h-full" required />                 
             </div>
         
-            <div className="flex items-center mt-8 w-full border-2 border-sky-500 h-12 rounded-full overflow-hidden pl-6 gap-2">
+            <div className="flex items-center mt-4 w-full border-2 border-sky-500 h-11 rounded-full overflow-hidden pl-6 gap-1">
                
-                <input onChange={(e)=>{setformData({...formData,password:e.target.value})}} type="password" placeholder="Password" className="bg-indigo-950 text-white placeholder-gray-500 outline-none text-sm w-full h-full" required />                 
+                <input onChange={(e)=>{setformData({...formData,password:e.target.value})}} type="password" placeholder="Password" className="bg-indigo-950 text-white placeholder-gray-500 outline-none text-xs w-full h-full" required />                 
             </div>
             
         
-            <button disabled={isSigning} type="submit" className="mt-8 w-full h-11 rounded-full text-black bg-sky-600 hover:opacity-90 transition-opacity">
+            <button disabled={isSigning} type="submit" className="mt-5 w-full h-11 rounded-full text-black bg-sky-600 hover:opacity-90 transition-opacity">
                 Sign in
             </button>
-            <p className="text-gray-500 text-sm mt-3 mb-11">Already have an account? <Link className='text-blue-500' to="/login">Login</Link></p>
+            <p className="text-gray-500 text-sm mt-3 mb-11">Already have an account? <Link className='text-blue-400 hover:text-blue-500 transition' to="/login">Login</Link></p>
         </form>
         </div>  
 

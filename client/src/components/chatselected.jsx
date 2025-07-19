@@ -28,7 +28,7 @@ const [messages,setmessages] = useState([])
 
     return(
 
-    <div className="flex flex-col h-screen w-full">
+    <div className="flex flex-col h-[680px] w-full">
         <Chatheader onlineUsers={onlineUsers} selectedUser={selectedUser} setselectedUser={setselectedUser}/>
         {/* <div className=" relative h-screen w-full px-15"> */}
             <ScrolltoBottom className="flex-1 md:px-8 md:py-3 px-4 mt-3 overflow-y-auto scrollbar-hide ">
@@ -36,12 +36,12 @@ const [messages,setmessages] = useState([])
                 {messages.map((message)=>(
                     <div className={message.senderid===authUser._id?"flex justify-end gap-2 ":"flex justify-start gap-2"} key={message._id}>
                         
-                        <img className="w-12 h-12 border rounded-full" src={message.senderid===authUser._id?authUser.profilepic||'/profile.png':selectedUser.profilepic||'/profile.png'} alt="imm"/>
+                        <img className="w-9 md:w-12 h-9 cmd:h-12 border rounded-full" src={message.senderid===authUser._id?authUser.profilepic||'/profile.png':selectedUser.profilepic||'/profile.png'} alt="imm"/>
                       
                       
-                        <div className="relative flex flex-col p-4 bg-sky-500 border rounded-xl md:max-w-md max-w-xs mb-4 gap-1 ">
+                        <div className="relative flex flex-col p-2 md:p-4 bg-sky-500 border rounded-xl md:max-w-md max-w-xs mb-4 gap-1 ">
 
-                            <div className="text-white font-bold text-sm mb-1"><p>{message.senderid===authUser._id?authUser.fullname:selectedUser.fullname}</p></div>
+                            <div className="text-white font-bold text-xs md:text-sm mb-1"><p>{message.senderid===authUser._id?authUser.fullname:selectedUser.fullname}</p></div>
                            
                             <div className=" flex">
                            {(message.image)&&<img className="max-h-45 max-w-35 border border-gray-400 rounded-lg mb-2" src={message.image} alt="myu"/>}
