@@ -35,7 +35,7 @@ export default function Profilepage({
     
       <div className="bg-sky-500 flex h-screen w-full items-center justify-center px-10 md:p-0 md:justify-center md:items-center">
         <div className="flex flex-col bg-indigo-950  h-90 md:h-120 w-80 md:w-120 p-5 md:p-5 justify-center items-center">
-          <h1 className="text-2xl md:text-4xl text-white font-bold">Profile</h1>
+          <h1 className="text-2xl md:text-4xl text-white font-bold object-cover">Profile</h1>
           <div className="mt-4 relative ">
             <img
               className="border-2 border-white rounded-full h-35 w-35 md:h-50 md:w-50"
