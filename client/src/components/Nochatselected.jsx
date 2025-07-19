@@ -17,7 +17,7 @@ export default function Nochatselected() {
             <div className="h-35 w-35 mb-4">
                 <Chatanimation />
             </div>
-            <p className="text-white text-sm md:text-base font-medium">
+            <p className="text-white text-xs md:text-base font-medium">
                 Click a chat to start a conversation
             </p>
         </div>
