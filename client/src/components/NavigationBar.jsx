@@ -24,11 +24,11 @@ export default function NavigationBar({setauthUser,setsocket,socket,setisLogging
 
     }
     return(
-        <div className='flex  bg-black h-15 w-full items-center justify-between px-10 items-center'>
+        <div className='flex  bg-black h-15 w-full items-center justify-between px-2 md:px-10'>
         <Link to='/'><img className='h-32 ' src='/icon.png' alt='icon'/></Link>
         <div className=' flex gap-3'>
         <Link className='' to={'/profile'}>
-        <UserRound className='text-white h-7 hover:text-sky-500 hover:border-sky-500 transition border-3 rounded-full border-white w-7 font-bold' size={18} />
+        <UserRound className='text-white h-7 hover:text-sky-500 hover:border-sky-500 transition border-2 rounded-full border-white w-7 font-bold' size={29} />
         </Link>
         <button className='text-white h-6 hover:text-blue-500 transition' onClick={handleLogout}><LogOut size={27}/></button>
         </div>
