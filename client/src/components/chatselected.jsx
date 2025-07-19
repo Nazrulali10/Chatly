@@ -32,7 +32,7 @@ const [messages,setmessages] = useState([])
 
     <div className="flex flex-col h-screen w-full">
         <Chatheader onlineUsers={onlineUsers} selectedUser={selectedUser} setselectedUser={setselectedUser}/>
-        {messages.length>1?(
+        {messages.length>0?(
             <ScrolltoBottom className="flex-1 md:px-8 md:py-3 px-4 mt-3 overflow-y-auto scrollbar-hide ">
            
                 {messages.map((message)=>(
