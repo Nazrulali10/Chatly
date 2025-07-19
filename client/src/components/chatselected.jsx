@@ -28,7 +28,7 @@ const [messages,setmessages] = useState([])
 
     return(
 
-    <div className="flex flex-col h-[680px] w-full">
+    <div className="flex flex-col h-screen w-full">
         <Chatheader onlineUsers={onlineUsers} selectedUser={selectedUser} setselectedUser={setselectedUser}/>
         {/* <div className=" relative h-screen w-full px-15"> */}
             <ScrolltoBottom className="flex-1 md:px-8 md:py-3 px-4 mt-3 overflow-y-auto scrollbar-hide ">

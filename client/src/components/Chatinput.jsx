@@ -45,7 +45,7 @@ const handleImageChange = (e)=>{
 
 
         <div className="flex">
-            <form className="flex justify-center items-center gap-2 w-full pb-2" onSubmit={handleMessageSubmit}>
+            <form className="flex justify-center items-center gap-1 w-full pb-2" onSubmit={handleMessageSubmit}>
                 <input type="text" placeholder="enter a message..." value={text} onChange={(e)=>{settext(e.target.value)}} className="border-2 border-sky-500 rounded-full py-3 px-6 md:w-4xl w-xs outline-none text-sm caret-white text-white"/>
               <label htmlFor="inputchat" className="cursor-pointer"><Image className="w-6 h-6 text-sky-500" size={18}/><input type="file" accept="image/*" id="inputchat" onChange={handleImageChange} className="hidden"/></label>  
               <button type="submit" className="flex w-10 h-10 cursor-pointer bg-sky-500 rounded-full items-center justify-center" disabled={messageSending}><Send size={19}/></button>
