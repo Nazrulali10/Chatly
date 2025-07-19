@@ -30,7 +30,7 @@ const [messages,setmessages] = useState([])
 
     <div className="flex flex-col h-screen w-full">
         <Chatheader onlineUsers={onlineUsers} selectedUser={selectedUser} setselectedUser={setselectedUser}/>
-        {/* <div className=" relative h-screen w-full px-15"> */}
+        {messages.length<1?(
             <ScrolltoBottom className="flex-1 md:px-8 md:py-3 px-4 mt-3 overflow-y-auto scrollbar-hide ">
            
                 {messages.map((message)=>(
@@ -64,6 +64,7 @@ const [messages,setmessages] = useState([])
                 
         
         </ScrolltoBottom>
+        ):<div className="h-screen flex items-center justify-center text-gray-500">No messages yet</div>}
         {/* </div> */}
         <Chatinput selectedUser={selectedUser}/>
     </div>
