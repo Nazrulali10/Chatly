@@ -4,6 +4,8 @@ import Chatinput from "./Chatinput";
 import ScrolltoBottom from 'react-scroll-to-bottom'
 import BASE_URL from "../config";
 
+import Chatanimation from "./Chatanimation";
+
 
 export default function Chatselected({selectedUser,setselectedUser,authUser,onlineUsers,socket}){
 const [messages,setmessages] = useState([])    
@@ -64,7 +66,12 @@ const [messages,setmessages] = useState([])
                 
         
         </ScrolltoBottom>
-        ):<div className="h-screen flex items-center justify-center text-gray-500">No messages yet</div>}
+        ):<div className="h-screen flex items-center justify-center text-gray-500">
+            <div className="w-19 h-10 md:w-28 md:h-16 md:text-sm text-xs -mt-15">
+            <Chatanimation />
+            no messages
+            </div>
+            </div>}
         {/* </div> */}
         <Chatinput selectedUser={selectedUser}/>
     </div>
