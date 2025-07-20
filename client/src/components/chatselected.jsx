@@ -38,7 +38,7 @@ const [messages,setmessages] = useState([])
                 {messages.map((message)=>(
                     <div className={message.senderid===authUser._id?"flex justify-end gap-2 ":"flex justify-start gap-2"} key={message._id}>
                         
-                        <img className="w-9 md:w-12 h-9 cmd:h-12 border rounded-full object-cover" src={message.senderid===authUser._id?authUser.profilepic||'/profile.png':selectedUser.profilepic||'/profile.png'} alt="imm"/>
+                        <img className="w-9 md:w-12 h-9 md:h-12 border rounded-full object-cover" src={message.senderid===authUser._id?authUser.profilepic||'/profile.png':selectedUser.profilepic||'/profile.png'} alt="imm"/>
                       
                       
                         <div className="relative flex flex-col p-2 md:p-4 bg-sky-500 border rounded-xl md:max-w-md max-w-xs mb-4 gap-1 ">
