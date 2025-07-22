@@ -1,4 +1,4 @@
-import { Route,Routes,Navigate} from "react-router-dom"; //naviagte
+import { Route,Routes,Navigate} from "react-router-dom"; 
 import HomePage from "./pages/Homepage";
 import Profilepage from "./pages/Profilepage";
 import LoginPage from "./pages/Loginpage";
@@ -48,14 +48,6 @@ useEffect(() => {
 }, []);
 
 
-if (isLogginigin || isSigning || isLoggingOut || isCheckingAuth) {
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-[#0d1117]">
-      <Loader size={40} className="animate-spin text-gray-600 dark:text-gray-300" />
-    </div>
-  );
-}
-
 
 
   return (
@@ -70,6 +62,13 @@ if (isLogginigin || isSigning || isLoggingOut || isCheckingAuth) {
       />
    }
    <Toaster position="top-center"reverseOrder={false}/>
+    {(isLogginigin || isSigning || isLoggingOut || isCheckingAuth) && (
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 dark:bg-[#0d1117]/80 backdrop-blur-sm">
+        <div className="flex items-center">
+          <Loader size={34} className="animate-spin text-white" />
+        </div>
+      </div>
+    )}
    <Routes>
    <Route path="/" element={authUser?<HomePage authUser={authUser} setauthUser={setauthUser} socket={socket} setsocket={setsocket} onlineUsers={onlineUsers} setonlineUsers={setonlineUsers} setisLoggingOut={setisLoggingOut} isLoggingOut={isLoggingOut} />:<Navigate to='/login'/>} />
    <Route path="/signup" element={!authUser?<SignupPage setauthUser={setauthUser} socket={socket} setsocket={setsocket} onlineUsers={onlineUsers} setonlineUsers={setonlineUsers} setisSigning={setisSigning} isSigning={isSigning} />:<Navigate to='/'/>} />
