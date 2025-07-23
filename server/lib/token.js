@@ -5,7 +5,7 @@ const generateToken = (userid,res)=>{
 
     res.cookie("jwt", token, {
   httpOnly: true,
-  sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+  sameSite: process.env.NODE_ENV === "production" ? "lax" : "none",
   secure: process.env.NODE_ENV === "production",
 });
 
