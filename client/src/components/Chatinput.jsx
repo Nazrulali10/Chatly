@@ -35,7 +35,7 @@ const handleImageChange = (e)=>{
 
 
     return(
-      <div className="flex flex-col w-full">
+      <div className="flex flex-col w-full ">
 
 
       {imagepreview && <div className="relative mb-3 pl-2 md:pl-30">
@@ -44,11 +44,11 @@ const handleImageChange = (e)=>{
         </div>}
 
 
-        <div className="flex">
-            <form className="flex justify-center items-center gap-1 w-full pb-2" onSubmit={handleMessageSubmit}>
-                <input type="text" placeholder="enter a message..." value={text} onChange={(e)=>{settext(e.target.value)}} className="border-2 border-sky-500 rounded-full py-3 px-6 md:w-4xl w-xs outline-none text-sm caret-white text-white hover:border-sky-400"/>
-              <label htmlFor="inputchat" className="cursor-pointer"><Image className="w-6 h-6 text-sky-500 hover:text-sky-600  transition" size={18}/><input type="file" accept="image/*" id="inputchat" onChange={handleImageChange} className="hidden"/></label>  
-              <button type="submit" className="flex w-10 h-10 cursor-pointer bg-sky-500 rounded-full items-center justify-center hover:bg-sky-600 transition  transition" disabled={messageSending}><Send size={19}/></button>
+        <div className="flex bg-zinc-900 p-2">
+            <form className="flex justify-center items-center gap-1 w-full " onSubmit={handleMessageSubmit}>
+                <input type="text" placeholder="enter a message..." value={text} onChange={(e)=>{settext(e.target.value)}} className="border-2 border-amber-500 rounded-full py-3 px-6 md:w-4xl w-xs outline-none text-sm caret-white text-white hover:border-amber-400"/>
+              <label htmlFor="inputchat" className="cursor-pointer"><Image className="w-6 h-6 text-amber-500 hover:text-amber-600  transition" size={18}/><input type="file" accept="image/*" id="inputchat" onChange={handleImageChange} className="hidden"/></label>  
+              <button type="submit" className="flex w-10 h-10 cursor-pointer bg-amber-500 rounded-full items-center justify-center hover:bg-amber-600 transition" disabled={messageSending}><Send size={19}/></button>
             </form>
         </div>
 

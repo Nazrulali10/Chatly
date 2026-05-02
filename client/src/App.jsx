@@ -51,7 +51,7 @@ useEffect(() => {
 
 
   return (
-   <>
+   <div className="lexend-regular">
    {authUser&&
    
       <NavigationBar
@@ -75,7 +75,7 @@ useEffect(() => {
    <Route path="/login" element={!authUser?<LoginPage authUser={authUser} setauthUser={setauthUser} socket={socket} setsocket={setsocket} onlineUsers={onlineUsers} setonlineUsers={setonlineUsers} isLogginigin={isLogginigin} setisloggingin={setisloggingin}/>:<Navigate to='/'/>} />
    <Route path="/profile" element={authUser?<Profilepage authUser={authUser} setauthUser={setauthUser} socket={socket} setsocket={setsocket} setisLoggingOut={setisLoggingOut} isLoggingOut={isLoggingOut}/>:<Navigate to='/login'/>}/>
    </Routes>
-   </>
+   </div>
   );
 }
 

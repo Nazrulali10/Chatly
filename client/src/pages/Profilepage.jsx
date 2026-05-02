@@ -1,15 +1,7 @@
 import { Camera } from "lucide-react";
 import BASE_URL from "../config";
-import NavigationBar from "../components/NavigationBar";
 
-export default function Profilepage({
-  authUser,
-  setauthUser,
-  socket,
-  setsocket,
-  isLoggingOut,
-  setisLoggingOut,
-}) {
+export default function Profilepage({ authUser, setauthUser }) {
   const handleImageUpload = (e) => {
     try {
       const file = e.target.files[0];
@@ -32,21 +24,21 @@ export default function Profilepage({
     }
   };
   return (
-    
-      <div className="bg-sky-500 flex h-screen w-full items-center justify-center px-10 md:p-0 md:justify-center md:items-center">
-        <div className="flex flex-col bg-indigo-950  h-90 md:h-120 w-80 md:w-120 p-5 md:p-5 justify-center items-center">
-          <h1 className="text-2xl md:text-4xl text-white font-bold ">Profile</h1>
-          <div className="mt-4 relative ">
+    <div className="bg-zinc-900 flex h-[calc(100vh-60px)] w-full items-center justify-center px-10 md:p-0">
+      <div className="flex md:flex-row flex-col bg-neutral-800 md:p-6  md:gap-5 rounded-2xl shadow-md">
+        <div className="flex flex-col md:p-6 p-4 items-center gap-4 md:gap-4">
+          <h1 className="text-2xl md:text-3xl text-white ">Profile</h1>
+          <div className="relative ">
             <img
               className="border-2 border-white rounded-full h-35 w-35 md:h-50 md:w-50 object-cover"
               src={authUser.profilepic || "/profile.png"}
               alt="profile"
             />
             <label
-              className="absolute bottom-2 right-2 bg-sky-600 p-2 rounded-full shadow-md cursor-pointer hover:bg-sky-800 transition"
+              className="absolute bottom-2 right-2 bg-amber-500 p-2 rounded-full shadow-md cursor-pointer hover:bg-amber-800 transition"
               htmlFor="inputload"
             >
-              <Camera className="w-5 h-5 text-white" />
+              <Camera className="w-5 h-5 text-black" />
             </label>
             <input
               type="file"
@@ -56,28 +48,30 @@ export default function Profilepage({
               accept="image/*"
             />
           </div>
-          <span className="text-lime-400 mb-3 text-sm font-semibold">Active</span>
-
-          <label className="text-white font-semibold text-sm">
-             Name:
+        </div>
+        <div className="flex flex-col p-6">
+          <span className="text-green-400 mb-3 text-sm f">Active</span>
+          
+          <label className="text-white  text-sm">
+            Name:
             <input
               type="text"
-              className="w-50 md:w-80 border ml-2 font-semibold border-md px-3 py-2 text-white border-sky-500 mb-4 text-xs"
+              className=" border ml-2  border-md px-4 py-3 text-gray-200 rounded-2xl  border-amber-500 mb-4 text-xs"
               value={authUser.fullname}
               readOnly
             />
           </label>
-          <label className="text-white text-sm font-semibold">
-            Email:{" "}
+          <label className="text-white text-sm">
+            Email: {" "}
             <input
               type="text"
-              className="w-50 md:w-80 border ml-2  font-semibold border-md px-3 py-2 text-white border-sky-500 text-xs"
+              className="border ml-2   border-md px-4 py-3 text-gray-200  rounded-2xl border-amber-500 text-xs"
               value={authUser.email}
               readOnly
             />
           </label>
         </div>
       </div>
-    
+    </div>
   );
 }

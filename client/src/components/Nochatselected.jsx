@@ -1,23 +1,14 @@
-// import Chatanimation from "./Chatanimation";
 
-// export default function Nochatselected(){
-//     return(<div className="justify-center items-center">
-//       <div className="flex flex-col h-30">
-//       <Chatanimation className=''/>
-//       </div>
-//       <p className="text-white font-">click chat to start conversation</p> 
-//         </div>);
-// }
 
 import Chatanimation from "./Chatanimation";
 
 export default function Nochatselected() {
     return (
-        <div className="flex flex-col items-center justify-center h-full text-center px-4">
-            <div className="h-35 w-35 mb-4">
+        <div className="flex flex-col items-center justify-center h-screen text-center px-4">
+            <div className="h-30 w-30 mb-4">
                 <Chatanimation />
             </div>
-            <p className="text-white text-xs md:text-base font-medium">
+            <p className="text-white text-xs md:text-sm ">
                 Click a chat to start a conversation
             </p>
         </div>
