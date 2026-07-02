@@ -64,8 +64,9 @@ useEffect(() => {
    <Toaster position="top-center"reverseOrder={false}/>
     {(isLogginigin || isSigning || isLoggingOut || isCheckingAuth) && (
       <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 dark:bg-[#0d1117]/80 backdrop-blur-sm">
-        <div className="flex items-center">
+        <div className="flex flex-col items-center">
           <Loader size={34} className="animate-spin text-white" />
+          <p className="text-gray-400 text-xs md:test-sm" >please wait for the server to start</p>
         </div>
       </div>
     )}
