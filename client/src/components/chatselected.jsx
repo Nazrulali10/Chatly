@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Chatheader from "./Chatheader";
 import Chatinput from "./Chatinput";
-import ScrollToBottom from "react-scroll-to-bottom"; // ✅ fixed name casing
+import ScrollToBottom from "react-scroll-to-bottom";
 import BASE_URL from "../config";
 import Chatanimation from "./Chatanimation";
 
@@ -14,7 +14,7 @@ export default function Chatselected({
 }) {
   const [messages, setmessages] = useState([]);
 
-    useEffect(() => {
+  useEffect(() => {
     const getmessages = async () => {
       const response = await fetch(`${BASE_URL}/message/${selectedUser._id}`, {
         method: "GET",
@@ -37,20 +37,16 @@ export default function Chatselected({
   }, [selectedUser._id, messages, socket]);
 
   return (
-    // ✅ Changed: use h-screen + overflow-hidden to prevent full-page scrolling
-    <div className="flex flex-col h-dvh w-full overflow-hidden" >
-      
-      {/* ✅ Header stays fixed at the top */}
+    <div className="flex flex-col h-dvh w-full overflow-hidden">
       <Chatheader
         onlineUsers={onlineUsers}
         selectedUser={selectedUser}
         setselectedUser={setselectedUser}
       />
 
-      {/* ✅ Changed: only messages area should scroll */}
-      <div className="flex-1 overflow-y-auto px-4 md:px-8 md:py-3 ">
+      <ScrollToBottom className="flex-1 overflow-y-auto  px-4 md:px-12 md:py-3">
         {messages.length > 0 ? (
-          <ScrollToBottom className="h-full"> {/* ✅ Scrolls only inside this area */}
+          <div className="h-full">
             {messages.map((message) => (
               <div
                 className={
@@ -79,7 +75,6 @@ export default function Chatselected({
                     </p>
                   </div>
 
-                  {/* ✅ Image only shown if exists */}
                   {message.image && (
                     <img
                       className="max-h-45 max-w-35 border border-gray-400 rounded-lg mb-2 object-cover"
@@ -88,12 +83,10 @@ export default function Chatselected({
                     />
                   )}
 
-                  {/* ✅ Text only if present */}
                   {message.text && (
                     <p className="text-sm text-black">{message.text}</p>
                   )}
 
-                  {/* ✅ Clean timestamp formatting */}
                   <div className="text-[8px] self-end text-gray-100">
                     <p>
                       {new Date(message.timestamp).getHours()}:
@@ -106,9 +99,8 @@ export default function Chatselected({
                 </div>
               </div>
             ))}
-          </ScrollToBottom>
+          </div>
         ) : (
-          // ✅ Changed: properly center "no messages" text
           <div className="h-full flex items-center justify-center text-gray-500">
             <div className="flex flex-col h-32 w-32 items-center">
               <Chatanimation className />
@@ -116,13 +108,11 @@ export default function Chatselected({
             </div>
           </div>
         )}
-      </div>
+      </ScrollToBottom>
 
-      {/* ✅ Fixed input bar at the bottom (not scrollable) */}
       <div className="border-t sticky bottom-0  bg-white">
         <Chatinput selectedUser={selectedUser} />
       </div>
     </div>
   );
 }
-
