@@ -35,7 +35,6 @@ Chatly is a modern real-time chat application built with the MERN stack. It enab
 * React.js
 * React Router
 * Tailwind CSS
-* Axios
 
 ### Backend
 
